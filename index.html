@@ -25,7 +25,6 @@
             .box {
                 transition: height 1s 0.2s ease-in-out, width 1s 0.2s ease-in-out, border-radius 0.3s ease-in-out;
                 background-color: rgb(17 24 39);
-                margin: 2rem;
             }
         </style>
 
@@ -38,7 +37,7 @@
             <button class="block py-2 px-6 bg-indigo-500 text-2xl mx-auto mt-4 rounded text-gray-900" type="submit">Generate</button>
         </form>
         
-        <div id="boxContainer" class="flex justify-center flex-wrap py-12">
+        <div id="boxContainer" class="grid mx-auto">
             <!-- <div class="box" classs="h-0 w-0 m-8"></div> -->
         </div>
 
@@ -61,7 +60,11 @@
                     }
                     let br = Math.floor(sum / 5);
 
-                    for (let i = 0; i < sum; i++) {
+                    $("#boxContainer").css({
+
+                    })
+
+                    for (let i = 0; i < sum * 4; i++) {
                         setTimeout(() => {
                             let box = $("<div></div>");
 
@@ -71,6 +74,7 @@
                                 "border-radius": `${br}px`,
                                 "width": `${sum}px`,
                                 "height": `${sum}px`,
+                                "margin": `${br}px`,
                             });
 
                             box.attr(`data-el`, i);
